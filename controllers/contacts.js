@@ -4,7 +4,7 @@ const ObjectId = require('mongodb').ObjectId;
 // to get all contacts
 const getAllContacts = async (req, res) => {
   try {
-    const contacts = await mongodb.getDatabase().collection('contacts').find().toArray();
+    const contacts = await db.collection('contacts').find().toArray();
     res.setHeader('Content-Type', 'application/json');
     res.status(200).json(contacts);
   } catch (error) {
