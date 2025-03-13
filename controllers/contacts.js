@@ -4,15 +4,18 @@ const ObjectId = require('mongodb').ObjectId;
 // to get all contacts
 const getAllContacts = async (req, res) => {
   try {
-    const db = mongodb.getDatabase(); // Ensure we get the database instance
-    const contacts = await db.collection('contacts').find().toArray();
-    res.setHeader('Content-Type', 'application/json');
+    const db = mongodb.getDatabase();
+    const contacts = await db.collection("contacts").find().toArray();
+
+    console.log("Contacts fetched:", contacts); // tracking fetched data
+    res.setHeader("Content-Type", "application/json");
     res.status(200).json(contacts);
   } catch (error) {
-    console.error('Error fetching contacts:', error); // Log error for debugging
-    res.status(500).json({ message: 'Error fetching contacts', error });
+    console.error("Error fetching contacts:", error);
+    res.status(500).json({ message: "Error fetching contacts", error });
   }
 };
+
 
 
 // to get a single contact by id
