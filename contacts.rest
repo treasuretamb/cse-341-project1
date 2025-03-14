@@ -1,0 +1,34 @@
+# Get all contacts
+GET https://cse-341-project1-5d6k.onrender.com/contacts
+Accept: application/json
+
+# Create a new contact
+POST https://cse-341-project1-5d6k.onrender.com/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Trae",
+  "lastName": "Tamb",
+  "email": "traetamb@gmail.com",
+  "favoriteColor": "Black",
+  "birthday": "22-01-1993"
+}
+
+# Get a single contact 
+GET https://cse-341-project1-5d6k.onrender.com/contacts/67d2202e276943866969a4fb
+Accept: application/json
+
+# Update a contact 
+PUT https://cse-341-project1-5d6k.onrender.com/contacts/67d22076276943866969a4fc
+Content-Type: application/json
+
+{
+  "firstName": "Blos",
+  "lastName": "Tamb",
+  "email": "tambblos@yahoo.com",
+  "favoriteColor": "Green",
+  "birthday": "22-01-1993"
+}
+
+# Delete a contact
+DELETE https://cse-341-project1-5d6k.onrender.com/contacts/67d220e7276943866969a4fd
