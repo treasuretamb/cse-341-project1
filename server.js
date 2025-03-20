@@ -4,6 +4,10 @@ const mongodb = require('./data/database');
 const app = express();
 const port = process.env.PORT || 3000;
 
+// middleware to parse JSON and encoded data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 app.use('/', require('./routes'));
 app.use(require('./routes/swagger'));
 

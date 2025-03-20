@@ -1,7 +1,7 @@
 const mongodb = require('../data/database');
 const ObjectId = require('mongodb').ObjectId;
 
-// get all contacts
+// GET all contacts
 const getAllContacts = async (req, res) => {
   try {
     const db = mongodb.getDatabase();
@@ -15,7 +15,7 @@ const getAllContacts = async (req, res) => {
   }
 };
 
-// get a single contact by id
+// GET single contact by id
 const getSingleContact = async (req, res) => {
   try {
     const contactId = new ObjectId(req.params.id);
@@ -30,7 +30,7 @@ const getSingleContact = async (req, res) => {
   }
 };
 
-// POST to create new contact. All fields are required.
+// Create a new contact. all fields required.
 const createContact = async (req, res) => {
   const { firstName, lastName, email, favoriteColor, birthday } = req.body;
   if (!firstName || !lastName || !email || !favoriteColor || !birthday) {
@@ -48,7 +48,7 @@ const createContact = async (req, res) => {
   }
 };
 
-// PUT to Update contact by id.
+// Update a contact by id
 const updateContact = async (req, res) => {
   const contactId = req.params.id;
   const { firstName, lastName, email, favoriteColor, birthday } = req.body;
@@ -68,7 +68,7 @@ const updateContact = async (req, res) => {
   }
 };
 
-// DELETE to Delete contact by id.
+// Delete a contact by id
 const deleteContact = async (req, res) => {
   const contactId = req.params.id;
   try {
